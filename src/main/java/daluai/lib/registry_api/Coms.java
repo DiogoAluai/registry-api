@@ -6,7 +6,10 @@ import static daluai.lib.network_utils.property.PropertyKeys.FLY_APP_NAME;
 
 public class Coms {
 
-    public static final String REGISTRY_FLY_NAME = PropertyManager.DEFAULT_INSTANCE.getProperty(FLY_APP_NAME);
+    public static final String REGISTRY_CONFIG_PROPERTIES = "registry_config.properties";
+    public static final PropertyManager REGISTRY_PROPERTY_MANAGER = PropertyManager.of(REGISTRY_CONFIG_PROPERTIES);
+
+    public static final String REGISTRY_FLY_NAME = REGISTRY_PROPERTY_MANAGER.getProperty(FLY_APP_NAME);
     public static final String REGISTRY_CLOUD_URL = "https://" + REGISTRY_FLY_NAME + ".fly.dev";
     public static final String REGISTRY_LOCAL_URL = "http://localhost:8080";
 
